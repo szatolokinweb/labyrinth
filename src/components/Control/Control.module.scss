@@ -1,0 +1,18 @@
+.grid {
+  display: grid;
+  grid-template-columns: 20% 1fr 20%;
+  column-gap: calc(var(--gap) / 2);
+  align-items: center;
+}
+
+.value {
+  min-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: calc(var(--gap) / 2);
+  font-size: 20px;
+  color: white;
+  background-color: black;
+}
