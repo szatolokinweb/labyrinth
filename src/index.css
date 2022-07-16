@@ -30,9 +30,10 @@ a {
 }
 
 button {
+  display: block;
+  
   background: none;
   border: none;
   outline: none;
   font-weight: inherit;
-  text-align: inherit;
 }

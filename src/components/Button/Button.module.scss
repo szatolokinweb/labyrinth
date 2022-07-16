@@ -1,0 +1,36 @@
+.button {
+  padding: calc(var(--gap) / 2) var(--gap);
+  min-height: 40px;
+
+  background-color: green;
+  border-radius: calc(var(--gap) / 2);
+  color: white;
+  cursor: pointer;
+  transition-duration: var(--time);
+
+  &:hover {
+    &:not(:disabled) {
+      background-color: lightgreen;
+    }
+  }
+
+  &.danger {
+    background-color: darkred;
+
+    &:hover {
+      &:not(:disabled) {
+        background-color: lightcoral;
+      }
+    }
+  }
+
+  &:disabled {
+    background-color: lightgray;
+
+    cursor: not-allowed;
+  }
+
+  &.full {
+    width: 100%;
+  }
+}
