@@ -1,0 +1,39 @@
+@import "../../styles/mixins.scss";
+
+@mixin place {
+  padding: var(--gap);
+  height: 100%;
+
+  background-color: var(--color-place);
+  border-radius: calc(var(--gap) / 2);
+}
+
+.main {
+  margin: 0 auto;
+  width: calc(100% - (var(--gap) * 2));
+  max-width: 1440px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 27.5%;
+  grid-template-rows: 1fr 17.5%;
+  column-gap: var(--gap);
+  row-gap: var(--gap);
+
+  > {
+    div {
+      @include place;
+
+      &:nth-child(1) {
+        @include grid-area(1, 1, 2, 1);
+      }
+      &:nth-child(2) {
+        @include grid-area(1, 2, 1, 1);
+      }
+      &:nth-child(3) {
+        @include grid-area(2, 2, 1, 1);
+      }
+      &:nth-child(4) {
+        @include grid-area(3, 1, 1, 2);
+      }
+    }
+  }
+}

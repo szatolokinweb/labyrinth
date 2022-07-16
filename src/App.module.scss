@@ -1,0 +1,10 @@
+.app {
+  position: fixed;
+  inset: 0;
+
+  display: grid;
+  grid-template-rows: 60px 1fr 60px;
+  row-gap: var(--gap);
+
+  background-color: var(--color-body);
+}

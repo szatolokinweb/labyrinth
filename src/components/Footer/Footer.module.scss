@@ -1,0 +1,25 @@
+.footer {
+  padding: 0 var(--gap);
+  display: flex;
+  align-items: center;
+  column-gap: var(--gap);
+
+  background-color: var(--color-place);
+}
+
+.link {
+  padding: 0 calc(var(--gap) / 2);
+  height: 40px;
+  display: flex;
+  align-items: center;
+
+  border: 2px solid var(--color-main);
+  border-radius: calc(var(--gap) / 2);
+  color: var(--color-main);
+  transition-duration: var(--time);
+
+  &:hover {
+    background-color: var(--color-main);
+    color: white;
+  }
+}
