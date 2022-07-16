@@ -15,3 +15,11 @@
 .label {
   margin-bottom: calc(var(--gap) / 2);
 }
+
+.panel {
+  transition-duration: var(--time);
+
+  &.hide {
+    opacity: 0.25;
+  }
+}

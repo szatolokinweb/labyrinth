@@ -1,18 +1,29 @@
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import classNames from "classnames";
 
 import styles from "./Menu.module.scss";
 
 import { Button } from "../Button/Button";
 import { Control } from "../Control/Control";
+import { ACTION_TYPES } from "../../store/actionTypes";
 
 export const Menu = () => {
+  const dispatch = useDispatch();
+
+  const { gameState } = useSelector((state) => state);
+
   const [width, setWidth] = useState(3);
   const [height, setHeight] = useState(5);
   const [stepsCount, setStepsCount] = useState(10);
 
   return (
     <div className={styles.menu}>
-      <div>
+      <div
+        className={classNames(styles.panel, {
+          [styles.hide]: gameState !== "setup",
+        })}
+      >
         <div>
           <div className={styles.label}>Ширина:</div>
           <Control value={width} onChange={setWidth} min={3} max={10} />
@@ -33,7 +44,24 @@ export const Menu = () => {
       </div>
       <div>
         <div>
-          <Button full>Начать игру</Button>
+          {gameState === "setup" ? (
+            <Button
+              full
+              onClick={() => dispatch({ type: ACTION_TYPES.GAME_START })}
+            >
+              Начать игру
+            </Button>
+          ) : gameState === "game" ? (
+            <Button
+              full
+              theme="danger"
+              onClick={() => dispatch({ type: ACTION_TYPES.GAME_EXIT })}
+            >
+              Завершить игру
+            </Button>
+          ) : (
+            123
+          )}
         </div>
       </div>
     </div>

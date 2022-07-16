@@ -1,1 +1,4 @@
-export const ACTION_TYPES = {};
+export const ACTION_TYPES = {
+  GAME_START: "GAME_START",
+  GAME_EXIT: "GAME_EXIT",
+};
