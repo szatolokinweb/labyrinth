@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/labyrinth/build/static/css/main.4bd8a1ad.css",
-    "main.js": "/labyrinth/build/static/js/main.18ac3d12.js",
+    "main.css": "/labyrinth/build/static/css/main.ccf02fb6.css",
+    "main.js": "/labyrinth/build/static/js/main.abe5a801.js",
     "index.html": "/labyrinth/build/index.html",
-    "main.4bd8a1ad.css.map": "/labyrinth/build/static/css/main.4bd8a1ad.css.map",
-    "main.18ac3d12.js.map": "/labyrinth/build/static/js/main.18ac3d12.js.map"
+    "main.ccf02fb6.css.map": "/labyrinth/build/static/css/main.ccf02fb6.css.map",
+    "main.abe5a801.js.map": "/labyrinth/build/static/js/main.abe5a801.js.map"
   },
   "entrypoints": [
-    "static/css/main.4bd8a1ad.css",
-    "static/js/main.18ac3d12.js"
+    "static/css/main.ccf02fb6.css",
+    "static/js/main.abe5a801.js"
   ]
 }
