@@ -13,7 +13,7 @@
   width: calc(100% - (var(--gap) * 2));
   max-width: 1440px;
   display: grid;
-  grid-template-columns: 1fr 1fr 20%;
+  grid-template-columns: 1fr 30% 20%;
   grid-template-rows: 1fr 25%;
   column-gap: var(--gap);
   row-gap: var(--gap);

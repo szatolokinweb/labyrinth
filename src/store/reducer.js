@@ -15,6 +15,21 @@ export const reducer = (state = initialState, { type, payload }) => {
         gameState: "setup",
         gameTimeEnd: payload.gameTimeEnd,
       };
+    case ACTION_TYPES.GAME_WIDTH_CHANGE:
+      return {
+        ...state,
+        gameWidth: payload,
+      };
+    case ACTION_TYPES.GAME_HEIGHT_CHANGE:
+      return {
+        ...state,
+        gameHeight: payload,
+      };
+    case ACTION_TYPES.GAME_STEPS_COUNT_CHANGE:
+      return {
+        ...state,
+        gameStepsCount: payload,
+      };
     default:
       return state;
   }

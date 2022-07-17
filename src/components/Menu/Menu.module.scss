@@ -20,6 +20,8 @@
   transition-duration: var(--time);
 
   &.hide {
+    pointer-events: none;
+
     opacity: 0.25;
   }
 }
