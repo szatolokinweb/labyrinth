@@ -1,2 +1,64 @@
-.steps {
+.wrapper {
+  --gp: calc(var(--gap) / 3);
+  --tm: calc(var(--time) * 4);
+
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  margin-top: calc(var(--gp) * -1);
+  margin-left: calc(var(--gp) * -1);
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.item {
+  margin-top: var(--gp);
+  margin-left: var(--gp);
+  width: calc((100% - (var(--gp) * 5)) / 5);
+  height: calc((100% - (var(--gp) * 3)) / 3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--color-body);
+  border-radius: var(--gp);
+  transition-duration: var(--tm);
+
+  &.active {
+    background-color: var(--color-accept);
+    transition-delay: var(--delay);
+  }
+}
+
+.icon {
+  font-size: 52px;
+  color: white;
+  opacity: 0;
+
+  &.active {
+    opacity: 1;
+    transition: opacity var(--tm);
+    transition-delay: calc(var(--delay) * 2);
+  }
+
+  &.left {
+    transform: rotate(0);
+  }
+  &.right {
+    transform: rotate(180deg);
+  }
+  &.up {
+    transform: rotate(90deg);
+  }
+  &.down {
+    transform: rotate(-90deg);
+  }
 }

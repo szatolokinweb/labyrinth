@@ -6,7 +6,7 @@ export const initialState = {
 
   gameWidth: 3,
   gameHeight: 3,
-  gameStepsCount: 10,
+  gameStepsCount: 9,
 
   gameStart: null,
   gameSteps: null,
