@@ -33,13 +33,13 @@
   transition-duration: var(--time);
 
   &.game {
-    background-color: var(--color-accept);
+    background-color: var(--color-wood);
     transition-duration: var(--tm);
     transition-delay: var(--delay);
   }
 
   &.result {
-    background-color: var(--color-accept-light);
+    background-color: var(--color-wood-light);
     transition-duration: var(--tm);
     transition-delay: var(--delay);
   }
