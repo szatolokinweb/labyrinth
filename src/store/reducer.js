@@ -9,6 +9,7 @@ export const reducer = (state = initialState, { type, payload }) => {
         gameState: "game",
         gameTimeStart: payload.gameTimeStart,
         gameStart: payload.gameStart,
+        gameSteps: payload.gameSteps,
         gameEnd: payload.gameEnd,
       };
     case ACTION_TYPES.GAME_EXIT:

@@ -9,6 +9,6 @@ export const initialState = {
   gameStepsCount: 10,
 
   gameStart: null,
-  gameEnd: null,
   gameSteps: null,
+  gameEnd: null,
 };
