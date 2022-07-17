@@ -6,7 +6,7 @@ import styles from "./Menu.module.scss";
 
 import { Button } from "../Button/Button";
 import { Control } from "../Control/Control";
-import { ACTION_TYPES } from "../../store/actionTypes";
+import { gameStart, gameExit } from "../../store/actionCreators";
 
 export const Menu = () => {
   const dispatch = useDispatch();
@@ -45,18 +45,11 @@ export const Menu = () => {
       <div>
         <div>
           {gameState === "setup" ? (
-            <Button
-              full
-              onClick={() => dispatch({ type: ACTION_TYPES.GAME_START })}
-            >
+            <Button full onClick={() => dispatch(gameStart())}>
               Начать игру
             </Button>
           ) : gameState === "game" ? (
-            <Button
-              full
-              theme="danger"
-              onClick={() => dispatch({ type: ACTION_TYPES.GAME_EXIT })}
-            >
+            <Button full theme="danger" onClick={() => dispatch(gameExit())}>
               Завершить игру
             </Button>
           ) : (
