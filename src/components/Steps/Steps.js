@@ -1,4 +1,3 @@
-import { useSelector } from "react-redux";
 import classNames from "classnames";
 
 import styles from "./Steps.module.scss";

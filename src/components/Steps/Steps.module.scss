@@ -1,6 +1,6 @@
 .wrapper {
   --gp: calc(var(--gap) / 3);
-  --tm: calc(var(--time) * 4);
+  --tm: calc(var(--time) * 6);
 
   height: 100%;
   display: flex;
@@ -30,23 +30,24 @@
 
   background-color: var(--color-body);
   border-radius: var(--gp);
-  transition-duration: var(--tm);
+  transition-duration: var(--time);
 
   &.active {
     background-color: var(--color-accept);
+    transition-duration: var(--tm);
     transition-delay: var(--delay);
   }
 }
 
 .icon {
-  font-size: 52px;
+  font-size: 44px;
   color: white;
   opacity: 0;
 
   &.active {
     opacity: 1;
     transition: opacity var(--tm);
-    transition-delay: calc(var(--delay) * 2);
+    transition-delay: calc(var(--delay) * 3);
   }
 
   &.left {
