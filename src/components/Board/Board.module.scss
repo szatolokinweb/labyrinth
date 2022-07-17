@@ -11,7 +11,7 @@
   row-gap: var(--gap);
   pointer-events: none;
 
-  &.active {
+  &.game {
     pointer-events: all;
   }
 }

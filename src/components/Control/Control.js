@@ -4,13 +4,13 @@ import styles from "./Control.module.scss";
 
 import { Button } from "../Button/Button";
 
-export const Control = ({ value, onChange, min, max }) => {
+export const Control = ({ name, value, onChange, min, max }) => {
   return (
     <div className={styles.grid}>
       <div>
         <Button
           full
-          onClick={() => value - 1 >= min && onChange(value - 1)}
+          onClick={() => value - 1 >= min && onChange(name, value - 1)}
           disabled={value === min}
         >
           -
@@ -20,7 +20,7 @@ export const Control = ({ value, onChange, min, max }) => {
       <div>
         <Button
           full
-          onClick={() => value + 1 <= max && onChange(value + 1)}
+          onClick={() => value + 1 <= max && onChange(name, value + 1)}
           disabled={value === max}
         >
           +

@@ -18,6 +18,17 @@ export const reducer = (state = initialState, { type, payload }) => {
         gameState: "setup",
         gameTimeEnd: payload.gameTimeEnd,
       };
+    case ACTION_TYPES.GAME_SETUP:
+      return {
+        ...state,
+        gameState: "setup",
+      };
+    case ACTION_TYPES.GAME_RESULT:
+      return {
+        ...state,
+        gameState: "result",
+        gameTimeEnd: payload.gameTimeEnd,
+      };
     case ACTION_TYPES.GAME_WIDTH_CHANGE:
       return {
         ...state,

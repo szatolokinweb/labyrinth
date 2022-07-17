@@ -32,8 +32,14 @@
   border-radius: var(--gp);
   transition-duration: var(--time);
 
-  &.active {
+  &.game {
     background-color: var(--color-accept);
+    transition-duration: var(--tm);
+    transition-delay: var(--delay);
+  }
+
+  &.result {
+    background-color: var(--color-accept-light);
     transition-duration: var(--tm);
     transition-delay: var(--delay);
   }

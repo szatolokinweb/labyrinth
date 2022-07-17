@@ -25,10 +25,20 @@ export const gameStart = () => (dispatch, getState) => {
     },
   });
 };
-
 export const gameExit = () => (dispatch) => {
   dispatch({
     type: ACTION_TYPES.GAME_EXIT,
+    payload: {
+      gameTimeEnd: new Date(),
+    },
+  });
+};
+export const gameSetup = () => ({
+  type: ACTION_TYPES.GAME_SETUP,
+});
+export const gameResult = () => (dispatch) => {
+  dispatch({
+    type: ACTION_TYPES.GAME_RESULT,
     payload: {
       gameTimeEnd: new Date(),
     },

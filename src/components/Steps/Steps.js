@@ -17,7 +17,8 @@ export const Steps = () => {
             <div
               key={index}
               className={classNames(styles.item, {
-                [styles.active]: step,
+                [styles.game]: gameState === "game",
+                [styles.result]: gameState === "result",
               })}
               style={{
                 "--delay": `${index * STEPS_DELAY}ms`,

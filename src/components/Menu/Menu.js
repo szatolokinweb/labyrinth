@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import classNames from "classnames";
+import { useCallback } from "react";
 
 import styles from "./Menu.module.scss";
 
@@ -8,12 +8,30 @@ import { Button } from "../Button/Button";
 import { Control } from "../Control/Control";
 import * as actionCreators from "../../store/actionCreators";
 import * as constants from "../../utils/constants";
+import { useStoreState } from "../../hooks/useStoreState";
 
 export const Menu = () => {
   const dispatch = useDispatch();
 
-  const { gameState, gameWidth, gameHeight, gameStepsCount } = useSelector(
-    (state) => state
+  const { gameState, gameWidth, gameHeight, gameStepsCount } = useStoreState();
+
+  const handleChange = useCallback(
+    (name, value) => {
+      switch (name) {
+        case "width":
+          dispatch(actionCreators.gameWidthChange(value));
+          break;
+        case "height":
+          dispatch(actionCreators.gameHeightChange(value));
+          break;
+        case "stepsCount":
+          dispatch(actionCreators.gameStepsCountChange(value));
+          break;
+        default:
+          return;
+      }
+    },
+    [dispatch]
   );
 
   return (
@@ -26,10 +44,9 @@ export const Menu = () => {
         <div>
           <div className={styles.label}>Ширина:</div>
           <Control
+            name="width"
             value={gameWidth}
-            onChange={(width) =>
-              dispatch(actionCreators.gameWidthChange(width))
-            }
+            onChange={handleChange}
             min={constants.WIDTH_MIN}
             max={constants.WIDTH_MAX}
           />
@@ -37,10 +54,9 @@ export const Menu = () => {
         <div>
           <div className={styles.label}>Высота:</div>
           <Control
+            name="height"
             value={gameHeight}
-            onChange={(height) =>
-              dispatch(actionCreators.gameHeightChange(height))
-            }
+            onChange={handleChange}
             min={constants.HEIGHT_MIN}
             max={constants.HEIGHT_MAX}
           />
@@ -48,10 +64,9 @@ export const Menu = () => {
         <div>
           <div className={styles.label}>Кол-во шагов:</div>
           <Control
+            name="stepsCount"
             value={gameStepsCount}
-            onChange={(stepsCount) =>
-              dispatch(actionCreators.gameStepsCountChange(stepsCount))
-            }
+            onChange={handleChange}
             min={constants.STEPS_COUNT_MIN}
             max={constants.STEPS_COUNT_MAX}
           />
@@ -72,7 +87,9 @@ export const Menu = () => {
               Завершить игру
             </Button>
           ) : (
-            123
+            <Button full onClick={() => dispatch(actionCreators.gameSetup())}>
+              Далее
+            </Button>
           )}
         </div>
       </div>
