@@ -1,5 +1,3 @@
-import { useSelector } from "react-redux";
-import { useEffect, useRef } from "react";
 import classNames from "classnames";
 
 import styles from "./Board.module.scss";
@@ -8,26 +6,16 @@ import { repeat } from "../../utils/repeat";
 import { getPoint } from "../../utils/getPoint";
 import { getSymbol } from "../../utils/getSymbol";
 import { checkEqualPoints } from "../../utils/checkEqualPoints";
+import { useStoreState } from "../../hooks/useStoreState";
 
 export const Board = () => {
-  const { gameState, gameWidth, gameHeight, gameStart, gameEnd } = useSelector(
-    (state) => state
-  );
-
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     console.log(ref.current);
-  //   };
-
-  //   handleResize();
-
-  //   return () => {};
-  // }, []);
+  const { gameState, gameWidth, gameHeight, gameStart, gameEnd } =
+    useStoreState();
 
   return (
     <div
       className={classNames(styles.grid, {
-        [styles.game]: gameState === "game",
+        [styles.active]: gameState !== "setup",
       })}
       style={{ "--width": gameWidth, "--height": gameHeight }}
     >
@@ -43,7 +31,8 @@ export const Board = () => {
                 [styles.game]: gameState === "game",
               },
               {
-                [styles.start]: gameState === "game" && checkEqualPoints({ x, y }, gameStart),
+                [styles.start]:
+                  gameState === "game" && checkEqualPoints({ x, y }, gameStart),
               }
             )}
           >

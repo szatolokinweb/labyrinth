@@ -1,6 +1,8 @@
 @import "../../styles/keyframes.scss";
 
 .grid {
+  --tm: calc(var(--time) * 4);
+
   height: 100%;
   display: grid;
   grid-template-columns: repeat(var(--width), 1fr);
@@ -9,7 +11,7 @@
   row-gap: var(--gap);
   pointer-events: none;
 
-  &.game {
+  &.active {
     pointer-events: all;
   }
 }
@@ -23,8 +25,8 @@
   border-radius: var(--gap);
   font-size: 70px;
   cursor: pointer;
-  transition-duration: var(--time);
-  animation-duration: calc(var(--time) * 4);
+  transition-duration: var(--tm);
+  animation-duration: var(--tm);
 
   &.game {
     &.start {
