@@ -3,6 +3,12 @@
   grid-template-columns: 20% 1fr 20%;
   column-gap: calc(var(--gap) / 2);
   align-items: center;
+
+  &:hover {
+    .value {
+      background-color: var(--color-black);
+    }
+  }
 }
 
 .value {
@@ -14,5 +20,6 @@
   border-radius: calc(var(--gap) / 2);
   font-size: 20px;
   color: white;
-  background-color: black;
+  background-color: var(--color-black-light);
+  transition-duration: var(--time);
 }

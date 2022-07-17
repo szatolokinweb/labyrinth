@@ -1,0 +1,17 @@
+@keyframes shake {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(calc(var(--shake) * -1));
+  }
+  50% {
+    transform: rotate(0);
+  }
+  75% {
+    transform: rotate(var(--shake));
+  }
+  100% {
+    transform: rotate(0);
+  }
+}

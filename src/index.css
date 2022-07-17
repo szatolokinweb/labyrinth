@@ -1,13 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,700&display=swap");
 
 :root {
+  --shake: 5deg;
+
   --gap: 20px;
 
   --time: 0.1s;
 
   --color-body: rgb(235, 235, 235);
+
   --color-place: white;
+
   --color-main: rgb(36, 87, 255);
+  --color-main-light: rgb(141, 167, 255);
+
+  --color-black: black;
+  --color-black-light: rgb(77, 77, 77);
+
+  --color-danger: #96031a;
+  --color-danger-light: #dd4e63;
+
+  --color-accept: #4aad52;
+  --color-accept-light: #85c78a;
 }
 
 *,
@@ -31,7 +45,7 @@ a {
 
 button {
   display: block;
-  
+
   background: none;
   border: none;
   outline: none;

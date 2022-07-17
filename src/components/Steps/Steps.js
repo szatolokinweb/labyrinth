@@ -9,8 +9,8 @@ export const Steps = () => {
     gameSteps && (
       <>
         <ul>
-          {gameSteps.map((step) => (
-            <li>{step}</li>
+          {gameSteps.map((step, index) => (
+            <li key={index}>{step}</li>
           ))}
         </ul>
       </>

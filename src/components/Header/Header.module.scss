@@ -1,3 +1,5 @@
+@import "../../styles/keyframes.scss";
+
 .header {
   padding: 0 var(--gap);
   display: flex;
@@ -8,27 +10,6 @@
 }
 
 .logo {
-  $rotate-angle: 5deg;
-  $rotate-time: 0.2s;
-
-  @keyframes logo-hover {
-    0% {
-      transform: rotate(0);
-    }
-    25% {
-      transform: rotate(-$rotate-angle);
-    }
-    50% {
-      transform: rotate(0);
-    }
-    75% {
-      transform: rotate($rotate-angle);
-    }
-    100% {
-      transform: rotate(0);
-    }
-  }
-
   padding: 0 calc(var(--gap) / 2);
   height: 40px;
   display: flex;
@@ -38,10 +19,10 @@
   border-radius: calc(var(--gap) / 2);
   color: white;
   cursor: pointer;
-  animation-duration: $rotate-time;
+  animation-duration: calc(var(--time) * 4);
   font-weight: bold;
 
   &:hover {
-    animation-name: logo-hover;
+    animation-name: shake;
   }
 }

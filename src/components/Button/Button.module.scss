@@ -2,7 +2,7 @@
   padding: calc(var(--gap) / 2) var(--gap);
   min-height: 40px;
 
-  background-color: green;
+  background-color: var(--color-accept);
   border-radius: calc(var(--gap) / 2);
   color: white;
   cursor: pointer;
@@ -10,22 +10,22 @@
 
   &:hover {
     &:not(:disabled) {
-      background-color: lightgreen;
+      background-color: var(--color-accept-light);
     }
   }
 
   &.danger {
-    background-color: darkred;
+    background-color: var(--color-danger);
 
     &:hover {
       &:not(:disabled) {
-        background-color: lightcoral;
+        background-color: var(--color-danger-light);
       }
     }
   }
 
   &:disabled {
-    background-color: lightgray;
+    background-color: var(--color-body);
 
     cursor: not-allowed;
   }
